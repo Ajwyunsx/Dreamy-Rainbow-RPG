@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bootstrap_background">#0E3D83</color>
+    <color name="bootstrap_primary_text">#F7FCFF</color>
+    <color name="bootstrap_secondary_text">#D6F1FF</color>
+    <color name="bootstrap_progress">#56D8FF</color>
+</resources>

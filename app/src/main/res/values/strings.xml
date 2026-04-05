@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dreamy Rainbow RPG</string>
+    <string name="install_title">Dreamy Rainbow RPG</string>
+    <string name="install_status_prepare">准备安装资源</string>
+    <string name="install_status_verify">校验内置章节数据</string>
+    <string name="install_status_extract">安装章节资源</string>
+    <string name="install_status_finalize">整理私有目录</string>
+    <string name="install_status_retry">重试安装</string>
+    <string name="install_status_done">进入章节选择</string>
+    <string name="install_status_failed">安装失败</string>
+    <string name="install_detail_prepare">正在检查 APK 内打包的游戏资源。</string>
+    <string name="install_detail_finalize">正在写入应用私有目录。</string>
+    <string name="install_detail_retry">正在清理上一次失败的安装并重试一次。</string>
+    <string name="install_detail_done">安装完成，正在启动游戏。</string>
+    <string name="install_detail_chapter_select">安装完成，请选择要进入的章节。</string>
+    <string name="install_detail_percent">已完成 %1$d%%</string>
+    <string name="install_retry">重新安装</string>
+    <string name="chapter_title">选择章节</string>
+    <string name="chapter_subtitle">每个入口都会直接载入对应的完整章节包，最终结局也在下面。</string>
+    <string name="chapter_option_1">1\n第一章</string>
+    <string name="chapter_option_2">2\n第二章</string>
+    <string name="chapter_option_3">3\n第三章</string>
+    <string name="chapter_option_4">4\n第四章</string>
+    <string name="chapter_option_end">END\n最终结局</string>
+    <string name="chapter_hero_desc">云宝章节封面</string>
+    <string name="install_hero_desc">云宝安装封面</string>
+</resources>

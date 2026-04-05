@@ -1,0 +1,123 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+def mkxpRoot = file("jni/mkxp-z")
+def mkxpAssetsDir = new File(mkxpRoot, "assets")
+def mkxpShaderDir = new File(mkxpRoot, "shader")
+def mkxpXxdAssetsDir = new File(mkxpRoot, "xxd/assets")
+def mkxpXxdShaderDir = new File(mkxpRoot, "xxd/shader")
+def windowsShortJniDir = new File("C:/Users/34275/Downloads/DREAMY~1/android-shell/app/jni")
+def androidMkPath = windowsShortJniDir.exists() ? new File(windowsShortJniDir, "Android.mk") : file("jni/Android.mk")
+def windowsShortBuildDir = new File("C:/Users/34275/Downloads/DREAMY~1/android-shell/app/build-short")
+if (windowsShortJniDir.exists()) {
+    buildDir = windowsShortBuildDir
+}
+
+def writeXxdHeader = { File inputFile, File outputFile, String symbolPrefix ->
+    String symbolName = "${symbolPrefix}_${inputFile.name.replaceAll(/[^A-Za-z0-9]/, "_")}"
+    byte[] bytes = inputFile.bytes
+    outputFile.parentFile.mkdirs()
+    outputFile.withWriter("UTF-8") { writer ->
+        writer << "unsigned char ${symbolName}[] = {\n"
+        bytes.eachWithIndex { byte value, int index ->
+            if (index % 12 == 0) {
+                writer << "  "
+            }
+            writer << String.format("0x%02x", value & 0xFF)
+            if (index + 1 < bytes.length) {
+                writer << ", "
+            }
+            if (index % 12 == 11 || index + 1 == bytes.length) {
+                writer << "\n"
+            }
+        }
+        writer << "};\n"
+        writer << "unsigned int ${symbolName}_len = ${bytes.length};\n"
+    }
+}
+
+tasks.register("generateMkxpXxd") {
+    inputs.files(fileTree(mkxpAssetsDir), fileTree(mkxpShaderDir))
+    outputs.dirs(mkxpXxdAssetsDir, mkxpXxdShaderDir)
+
+    doLast {
+        delete(fileTree(dir: mkxpXxdAssetsDir, include: "*.xxd"))
+        delete(fileTree(dir: mkxpXxdShaderDir, include: "*.xxd"))
+
+        mkxpAssetsDir.listFiles()
+            ?.findAll { it.isFile() }
+            ?.sort { a, b -> a.name <=> b.name }
+            ?.each { assetFile ->
+                writeXxdHeader(assetFile, new File(mkxpXxdAssetsDir, "${assetFile.name}.xxd"), "assets")
+            }
+
+        mkxpShaderDir.listFiles()
+            ?.findAll { it.isFile() }
+            ?.sort { a, b -> a.name <=> b.name }
+            ?.each { shaderFile ->
+                writeXxdHeader(shaderFile, new File(mkxpXxdShaderDir, "${shaderFile.name}.xxd"), "shader")
+            }
+    }
+}
+
+tasks.configureEach {
+    if (name == "preBuild" || name.startsWith("configureNdkBuild") || name.startsWith("buildNdkBuild")) {
+        dependsOn("generateMkxpXxd")
+    }
+}
+
+def androidExt = project.extensions.getByName("android")
+androidExt.with {
+    namespace 'com.hatkid.mkxpz'
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "org.dreamyrainbowrpg.android"
+        minSdk 21
+        targetSdk 33
+        versionCode 11
+        versionName "0.1.1"
+        archivesBaseName = "dreamy-rainbow-rpg-$versionName"
+        ndkVersion "25.1.8937393"
+        ndk.debugSymbolLevel = 'SYMBOL_TABLE'
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            jniDebuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path androidMkPath
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+}

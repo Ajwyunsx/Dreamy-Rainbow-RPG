@@ -1,0 +1,30 @@
+﻿{
+    "version":  "1.1.5-zhCN-polish5-end",
+    "title":  "Dreamy Rainbow End RPG",
+    "chapterId":  "END",
+    "installDir":  "game-end",
+    "createdAt":  "2026-04-04T17:28:27.5136825+08:00",
+    "payloadZip":  {
+                       "path":  "payload.end.zip",
+                       "sha256":  "ACD9298E2C604DDA44DD3E25D48171B09B9F29C21345E5739AE3D62E0718C437",
+                       "size":  126453514
+                   },
+    "source":  {
+                   "fileCount":  642,
+                   "totalBytes":  142384308,
+                   "convertedWmaToOgg":  [
+                                             "Audio/BGM/mother.ogg",
+                                             "Audio/BGM/theendisneigh2.ogg",
+                                             "Audio/ME/antimastermax.ogg",
+                                             "Audio/SE/deathborn1.ogg",
+                                             "Audio/SE/pinkiecry.ogg",
+                                             "Audio/SE/SH Door Close 01.ogg",
+                                             "Audio/SE/SH Door Open 02.ogg",
+                                             "Audio/SE/sharedassets3_0004.ogg",
+                                             "Audio/SE/sharedassets3_0006.ogg",
+                                             "Audio/SE/sharedassets6_0002.ogg",
+                                             "Audio/SE/thumb.ogg"
+                                         ],
+                   "mergedRtpRoot":  "C:\\Program Files (x86)\\Common Files\\Enterbrain\\RGSS2\\RPGVX"
+               }
+}

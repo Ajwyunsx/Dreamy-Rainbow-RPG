@@ -1,0 +1,23 @@
+﻿{
+    "version":  "1.1.5-zhCN-polish5-3",
+    "title":  "Dreamy Rainbow 3 RPG",
+    "chapterId":  "3",
+    "installDir":  "game-3",
+    "createdAt":  "2026-04-04T17:26:41.2994711+08:00",
+    "payloadZip":  {
+                       "path":  "payload.3.zip",
+                       "sha256":  "2F3FB18FD2FCCD26817667307569318EBFA2050E452D25A7639F1C6A4FC2BCB0",
+                       "size":  114757635
+                   },
+    "source":  {
+                   "fileCount":  596,
+                   "totalBytes":  136639930,
+                   "convertedWmaToOgg":  [
+                                             "Audio/SE/sharedassets3_0004.ogg",
+                                             "Audio/SE/sharedassets3_0006.ogg",
+                                             "Audio/SE/sharedassets6_0002.ogg",
+                                             "Audio/SE/thumb.ogg"
+                                         ],
+                   "mergedRtpRoot":  "C:\\Program Files (x86)\\Common Files\\Enterbrain\\RGSS2\\RPGVX"
+               }
+}

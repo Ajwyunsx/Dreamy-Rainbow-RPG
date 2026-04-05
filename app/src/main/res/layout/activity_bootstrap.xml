@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bootstrap_background"
+    android:fillViewport="true"
+>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/screen_panel_background"
+            android:orientation="vertical"
+        >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/install_hero_desc"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rainbowdash_install_hero"
+            />
+
+            <TextView
+                android:id="@+id/install_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/install_title"
+                android:textColor="@color/bootstrap_primary_text"
+                android:textSize="28sp"
+                android:textStyle="bold"
+            />
+
+            <TextView
+                android:id="@+id/install_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/install_status_prepare"
+                android:textColor="@color/bootstrap_primary_text"
+                android:textSize="19sp"
+                android:textStyle="bold"
+            />
+
+            <TextView
+                android:id="@+id/install_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/install_detail_prepare"
+                android:textColor="@color/bootstrap_secondary_text"
+                android:textSize="14sp"
+            />
+
+            <ProgressBar
+                android:id="@+id/install_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="6dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_horizontal_rainbow"
+            />
+
+            <Button
+                android:id="@+id/install_retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/chapter_button_primary"
+                android:text="@string/install_retry"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+            />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

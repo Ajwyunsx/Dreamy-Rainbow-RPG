@@ -1,0 +1,31 @@
+# Android Studio and Gradle stuff
+.idea
+.gradle
+local.properties
+*.iml
+build/
+app/build-short/
+release/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+hs_err_pid*.log
+replay_pid*.log
+
+# Local game archives and extracted source folders
+dreamy-rainbow-*-rpg.rar
+dreamy-rainbow-*-rpg/
+
+# Keep install manifests in git, but publish payload archives separately
+app/src/main/assets/payload*.zip

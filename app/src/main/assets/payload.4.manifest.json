@@ -1,0 +1,32 @@
+﻿{
+    "version":  "1.1.5-zhCN-polish5-4",
+    "title":  "Dreamy Rainbow 4 RPG",
+    "chapterId":  "4",
+    "installDir":  "game-4",
+    "createdAt":  "2026-04-04T17:27:40.1745643+08:00",
+    "payloadZip":  {
+                       "path":  "payload.4.zip",
+                       "sha256":  "F9FD73AB73C894C36D7D1AB6E1817430A5F8B260765A1A84A3B8DE63E08A9CA5",
+                       "size":  120716828
+                   },
+    "source":  {
+                   "fileCount":  678,
+                   "totalBytes":  141373421,
+                   "convertedWmaToOgg":  [
+                                             "Audio/BGM/dejavu.ogg",
+                                             "Audio/BGM/truth.ogg",
+                                             "Audio/BGS/thetruthisneigh.ogg",
+                                             "Audio/ME/goremena.ogg",
+                                             "Audio/ME/pinkamena_memories1.ogg",
+                                             "Audio/ME/pinkamena_memories2.ogg",
+                                             "Audio/SE/deathborn1.ogg",
+                                             "Audio/SE/SH Door Close 01.ogg",
+                                             "Audio/SE/SH Door Open 02.ogg",
+                                             "Audio/SE/sharedassets3_0004.ogg",
+                                             "Audio/SE/sharedassets3_0006.ogg",
+                                             "Audio/SE/sharedassets6_0002.ogg",
+                                             "Audio/SE/thumb.ogg"
+                                         ],
+                   "mergedRtpRoot":  "C:\\Program Files (x86)\\Common Files\\Enterbrain\\RGSS2\\RPGVX"
+               }
+}

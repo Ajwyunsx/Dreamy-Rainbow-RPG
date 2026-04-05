@@ -1,0 +1,42 @@
+﻿{
+    "version":  "1.1.5-zhCN-polish5",
+    "generatedAt":  "2026-04-04T17:28:27.5236914+08:00",
+    "chapterCount":  5,
+    "chapters":  [
+                     {
+                         "id":  "1",
+                         "title":  "Dreamy Rainbow RPG",
+                         "installDir":  "game",
+                         "zipAsset":  "payload.zip",
+                         "manifestAsset":  "payload.manifest.json"
+                     },
+                     {
+                         "id":  "2",
+                         "title":  "Dreamy Rainbow 2 RPG",
+                         "installDir":  "game-2",
+                         "zipAsset":  "payload.2.zip",
+                         "manifestAsset":  "payload.2.manifest.json"
+                     },
+                     {
+                         "id":  "3",
+                         "title":  "Dreamy Rainbow 3 RPG",
+                         "installDir":  "game-3",
+                         "zipAsset":  "payload.3.zip",
+                         "manifestAsset":  "payload.3.manifest.json"
+                     },
+                     {
+                         "id":  "4",
+                         "title":  "Dreamy Rainbow 4 RPG",
+                         "installDir":  "game-4",
+                         "zipAsset":  "payload.4.zip",
+                         "manifestAsset":  "payload.4.manifest.json"
+                     },
+                     {
+                         "id":  "END",
+                         "title":  "Dreamy Rainbow End RPG",
+                         "installDir":  "game-end",
+                         "zipAsset":  "payload.end.zip",
+                         "manifestAsset":  "payload.end.manifest.json"
+                     }
+                 ]
+}
